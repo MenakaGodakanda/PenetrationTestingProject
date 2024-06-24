@@ -3,9 +3,35 @@
 ## Overview
 This project demonstrates how to perform penetration testing using open source tools. The project includes scripts for reconnaissance and reporting.
 
+## Setup Target Machine (Metasploitable)
+
+### 1. Create a New VM:
+
+- Open VirtualBox and click `New`.
+- Name the VM (e.g., `Metasploitable`).
+- Set the type to `Linux` and version to `Ubuntu (64-bit)`.
+- Allocate at least 1GB of RAM (2GB recommended).
+
+### 2. Attach the Metasploitable VMDK:
+
+- Download the Metasploitable VMDK file from SourceForge.
+- In VirtualBox, click on `Settings` for your new VM.
+- Go to `Storage` and add a new storage controller if one is not present.
+- Attach the downloaded VMDK file to the storage controller.
+
+### 3. Network Settings:
+
+- Go to the `Network` tab.
+- Set the network adapter to "Bridged Adapter" for direct network access or "Host-Only Adapter" for a safer internal network environment.
+
+### 4. Start the VM:
+
+- Click "Start" to boot up the VM.
+- Login with the default credentials (usually username: `msfadmin`, password: `msfadmin`).
+
 ## Tools Used
-- Kali Linux
-- Nmap
+- Kali Linux - a Debian-derived Linux distribution designed for digital forensics and penetration testing. 
+- Nmap - Network scanning and discovery tool.
 
 ## Setup
 
