@@ -3,35 +3,43 @@
 ## Overview
 This project demonstrates how to perform penetration testing using open source tools. The project includes scripts for reconnaissance and reporting.
 
-## Setup Target Machine (Metasploitable)
+## Setting Up the Environment
 
-### 1. Create a New VM:
+### Install VirtualBox
 
-- Open VirtualBox and click `New`.
-- Name the VM (e.g., `Metasploitable`).
-- Set the type to `Linux` and version to `Ubuntu (64-bit)`.
-- Allocate at least 1GB of RAM (2GB recommended).
+- Download VirtualBox from the [official website](https://www.virtualbox.org/wiki/Downloads).
+- Follow the installation instructions for your operating system.
 
-### 2. Attach the Metasploitable VMDK:
+### Set Up Kali Linux Virtual Machine
 
-- Download the Metasploitable VMDK file from SourceForge.
-- In VirtualBox, click on `Settings` for your new VM.
-- Go to `Storage` and add a new storage controller if one is not present.
-- Attach the downloaded VMDK file to the storage controller.
-
-### 3. Network Settings:
-
-- Go to the `Network` tab.
+- Download the Kali Linux ISO from the [official website](https://www.kali.org/get-kali/#kali-installer-images).
+- Open VirtualBox and create a new virtual machine:
+    - Name: Kali Linux
+    - Type: Linux
+    - Version: Debian (64-bit)
+- Allocate memory (RAM) and create a virtual hard disk.
 - Set the network adapter to "Bridged Adapter" for direct network access or "Host-Only Adapter" for a safer internal network environment.
+    - Go to `Settings` -> `Network` -> `Adapter 1` -> `Attached to: Bridged Adapter`.
+- Start the virtual machine and select the Kali Linux ISO to boot from.
+- Follow the installation instructions to install Kali Linux.
 
-### 4. Start the VM:
+### Setup Metasploitable Virtual Machine (Target)
 
-- Click "Start" to boot up the VM.
+- Download Metasploitable from [SourceForge](https://sourceforge.net/projects/metasploitable/files/Metasploitable2/).
+- Open VirtualBox and create a new virtual machine:
+    - Name: Metasploitable
+    - Type: Linux
+    - Version: Ubuntu (64-bit)
+- Allocate memory (RAM) and use the downloaded Metasploitable VMDK file as the virtual hard disk.
+- Set the network adapter to "Bridged Adapter" for direct network access or "Host-Only Adapter" for a safer internal network environment.
+    - Go to `Settings` -> `Network` -> `Adapter 1` -> `Attached to: Bridged Adapter`.
+- Start the virtual machine.
 - Login with the default credentials (usually username: `msfadmin`, password: `msfadmin`).
 
+![Screenshot 2024-06-25 000207](https://github.com/MenakaGodakanda/PenetrationTestingProject/assets/156875412/57fc87a7-b3d2-4230-b93b-fc77736d5532)
+
 ## Tools Used
-- Kali Linux - a Debian-derived Linux distribution designed for digital forensics and penetration testing. 
-- Nmap - Network scanning and discovery tool.
+- **Nmap** - Network scanning and discovery tool.
 
 ## Setup
 
@@ -45,11 +53,34 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install -y nmap
 ```
 
+## Finding the IP Address
+
+Here’s a detailed example of finding the IP address on a Linux host:
+
+- Open Terminal.
+- Run the `ip a` command:
+
+```bash
+ip a
+```
+
+- Identify the Primary Network Interface:
+    - Look for your primary network interface (often named `eth0`, `enp0s3`, or `wlan0`). You will see output similar to this:
+
+Kali Linux IP Address (Attacker): The IP address here is 192.168.1.12.<br><br>
+![Screenshot 2024-06-25 001853](https://github.com/MenakaGodakanda/PenetrationTestingProject/assets/156875412/4b6f4fc2-4d71-45ff-a8ea-052820c40d8e)
+<br><br>
+
+Metasploitable IP Address (Target): The IP address here is 192.168.1.17.<br><br>
+![Screenshot 2024-06-25 000216 - Copy](https://github.com/MenakaGodakanda/PenetrationTestingProject/assets/156875412/89b7d585-4067-4b34-93a9-fa2585b3c9df)
+
 ## Usage
 
 ### Network Scan
 
-Navigate to the reconnaissance directory and run the network_scan.sh script.
+- Navigate to the reconnaissance directory and run the network_scan.sh script.
+- The <target_ip> is `192.168.1.17`.
+- The results will be saved as `example_network_scan_output.txt`.
 
 ```bash
 cd reconnaissance
@@ -57,21 +88,34 @@ chmod +x network_scan.sh
 ./network_scan.sh <target_ip>
 ```
 
+![Screenshot 2024-06-24 235640](https://github.com/MenakaGodakanda/PenetrationTestingProject/assets/156875412/db94cb0d-97e8-4ad8-bd34-fb490a0d6995)
+
 ### Port Scan
 
+- Run the port_scan.sh script.
+- The <target_ip> is `192.168.1.17`.
+- The results will be saved as `example_port_scan_output.txt`.
+
 ```bash
-cd reconnaissance
 chmod +x port_scan.sh
 ./port_scan.sh <target_ip>
 ```
 
+![Screenshot 2024-06-24 235651](https://github.com/MenakaGodakanda/PenetrationTestingProject/assets/156875412/8b8b060e-7c80-44b1-9264-15648171f3d0)
+
 ### Vulnerability Scan
 
+- Run the vulnerability_scan.sh script.
+- The <target_ip> is `192.168.1.17`.
+- The results will be saved as `example_vulnerability_scan_output.txt`.
+
 ```bash
-cd reconnaissance
 chmod +x vulnerability_scan.sh
 ./vulnerability_scan.sh <target_ip>
 ```
+
+![Screenshot 2024-06-25 000828](https://github.com/MenakaGodakanda/PenetrationTestingProject/assets/156875412/5b512ec2-f729-4f1c-b539-17b9bad400f2)
+
 
 ## Directory Structure
 
