@@ -116,6 +116,10 @@ chmod +x vulnerability_scan.sh
 
 ![Screenshot 2024-06-25 000828](https://github.com/MenakaGodakanda/PenetrationTestingProject/assets/156875412/5b512ec2-f729-4f1c-b539-17b9bad400f2)
 
+## Generate Report
+- After the scan is complete, create a detailed report of the findings, including any vulnerabilities detected.
+- Templates for reporting findings is `reporting` / `report_template.md`.
+- Provide example output files in the `examples/` directory. You can generate these by running your scripts against a controlled target system.
 
 ## Directory Structure
 
