@@ -1,7 +1,15 @@
 # Penetration Testing Project
 
-## Overview
 This project demonstrates how to perform penetration testing using open source tools. The project includes scripts for reconnaissance and reporting.
+
+## Overview
+
+<img width="714" alt="Screenshot 2024-06-25 at 2 03 57 PM" src="https://github.com/MenakaGodakanda/PenetrationTestingProject/assets/156875412/adf2efc3-c912-49e6-b05b-c854cac01902">
+
+### Explanation:
+- **VirtualBox**: Hosts the Target VM, which is where the penetration testing activities are conducted.
+- **Attacker VM (Kali Linux)**: A virtual machine configured with tools and scripts interact with the Target VM to perform scans and analyze results.
+- **Target VM (Metasploitable)**: A virtual machine configured with intentionally vulnerable services and applications.
 
 ## Setting Up the Environment
 
@@ -67,11 +75,11 @@ ip a
 - Identify the Primary Network Interface:
     - Look for your primary network interface (often named `eth0`, `enp0s3`, or `wlan0`). You will see output similar to this:
 
-Kali Linux IP Address (Attacker): The IP address here is 192.168.1.12.<br><br>
+Kali Linux IP Address (Attacker): The IP address here is `192.168.1.12`.<br><br>
 ![Screenshot 2024-06-25 001853](https://github.com/MenakaGodakanda/PenetrationTestingProject/assets/156875412/4b6f4fc2-4d71-45ff-a8ea-052820c40d8e)
 <br><br>
 
-Metasploitable IP Address (Target): The IP address here is 192.168.1.17.<br><br>
+Metasploitable IP Address (Target): The IP address here is `192.168.1.17`.<br><br>
 ![Screenshot 2024-06-25 000216 - Copy](https://github.com/MenakaGodakanda/PenetrationTestingProject/assets/156875412/89b7d585-4067-4b34-93a9-fa2585b3c9df)
 
 ## Usage
