@@ -1,6 +1,7 @@
 # Penetration Testing Project
 
-This project demonstrates how to perform penetration testing using open source tools. The project includes scripts for reconnaissance and reporting.
+This project demonstrates how to perform penetration testing using open source tools. The project includes scripts for reconnaissance and reporting.<br>
+<a href="https://github.com/MenakaGodakanda/PenetrationTestingProject/blob/main/Project_Description.md">Project Description</a>
 
 ## Overview
 
