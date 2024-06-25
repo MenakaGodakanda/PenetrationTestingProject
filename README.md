@@ -135,21 +135,17 @@ chmod +x vulnerability_scan.sh
 ```
 PenetrationTestingProject/
 ├── README.md
-├── reconnaissance/
+├── reconnaissance/                    # Scripts for network and vulnerability scanning.
 │   ├── network_scan.sh
 │   ├── port_scan.sh
 │   └── vulnerability_scan.sh
-├── reporting/
+├── reporting/                         # Templates for reporting findings.
 │   └── report_template.md
-└── examples/
+└── examples/                          # Example output files.
     ├── example_network_scan_output.txt
     ├── example_port_scan_output.txt
     └── example_vulnerability_scan_output.txt
-```
-
-- **reconnaissance/**: Scripts for network and vulnerability scanning.
-- **reporting/**: Templates for reporting findings.
-- **examples/**: Example output files.
+``` 
 
 ## Disclaimer
 
